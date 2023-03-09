@@ -45,3 +45,24 @@
 ### Task 9. Bye bye My first directory
 > Delete the directory my_first_directory that is in the /tmp directory.
 > **Script File:** [9-firstdirdeletion](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/9-firstdirdeletion)
+
+### Task 10. Back to the future
+> Write a script that changes the working directory to the previous one.
+> **Script File:** [10-back](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/10-back)
+
+### Task 11. Lists
+> Write a script that lists all files (even ones with names beginning with a period character, which are normally hidden) in the current directory and the parent of the working directory and the /boot directory (in this order), in long format.
+> **Script File:** [11-lists](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/11-lists)
+
+### Task 12. File type
+> Write a script that prints the type of the file named iamafile. The file iamafile will be in the /tmp directory when we will run your script.
+> **Script File:** [12-file_type](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/12-file_type)
+
+### Task 13. We are symbols, and inhabit symbols
+> Create a symbolic link to /bin/ls, named __ls__. The symbolic link should be created in the current working directory.
+> **Script File:** [13-symbolic_link](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/13-symbolic_link)
+
+### Task 14. Copy HTML files
+> Create a script that copies all the HTML files from the current working directory to the parent of the working directory, but only copy files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
+You can consider that all HTML files have the extension .html
+> **Script File:** [14-copy_html](https://github.com/lgnjenga/alx-system_engineering-devops/blob/master/0x00-shell_basics/14-copy_html)
