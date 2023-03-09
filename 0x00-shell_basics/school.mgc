@@ -1,2 +1,2 @@
 #!/bin/bash
-file -C -m <(echo '0 string SCHOOL  School data file') school.mgc
+echo '0 string SCHOOL  School data file' | file -C -m - school.mgc
