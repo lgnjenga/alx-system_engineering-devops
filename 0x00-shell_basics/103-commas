@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1aFv | sort -d -f -k1.1,1.1 -k2n | sed '$!s/$/, /; $s/$/\n/'
+Ls -amvp
