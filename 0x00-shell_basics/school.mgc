@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -exec sh -c 'file -b "$0" | grep -q "^SCHOOL"' {} \ | file -C -m - school.mgc
+find . -type f -exec sh -c 'file -b "$0" | grep -q "^SCHOOL"' {} \
