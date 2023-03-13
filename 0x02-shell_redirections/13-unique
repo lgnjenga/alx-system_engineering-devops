@@ -1,2 +1,2 @@
 #!/bin/bash
-cat wordslist | tr ' ' '\n' | sort | uniq -u
+cat | tr ' ' '\n' | sort | uniq -u
