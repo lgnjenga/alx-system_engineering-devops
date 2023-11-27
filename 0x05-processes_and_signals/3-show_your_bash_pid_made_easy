@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Get the PID of the script itself
+script_pid=$$
+
+# Use pgrep to find PIDs of processes with 'bash' in their name
+pids=$(pgrep -f bash)
+
+# Iterate through the found PIDs
+for pid in $pids; do
+    # Exclude the script's own PID from the output
+    if [ "$pid" != "$script_pid" ]; then
+        echo "$pid bash"
+    fi
+done
