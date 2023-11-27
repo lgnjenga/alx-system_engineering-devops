@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-# Find directories in /proc that are potential processes
-proc_dirs=$(find /proc -maxdepth 1 -type d -regex '^/proc/[0-9]+')
-
-# Iterate through the potential process directories
-for proc_dir in $proc_dirs; do
+# Iterate through each directory in /proc that contains a number (representing a process)
+for proc_dir in /proc/[0-9]*; do
     # Extract the process ID from the directory path
     pid=$(basename "$proc_dir")
     
