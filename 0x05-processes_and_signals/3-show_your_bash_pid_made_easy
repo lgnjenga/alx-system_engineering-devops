@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-# Get the PID of the script itself
-script_pid=$$
+# Find directories in /proc that are potential processes
+proc_dirs=$(find /proc -maxdepth 1 -type d -regex '^/proc/[0-9]+')
 
-# Use pgrep to find PIDs of processes with 'bash' in their name
-pids=$(pgrep -f bash)
-
-# Iterate through the found PIDs
-for pid in $pids; do
-    # Exclude the script's own PID from the output
-    if [ "$pid" != "$script_pid" ]; then
-        echo "$pid bash"
+# Iterate through the potential process directories
+for proc_dir in $proc_dirs; do
+    # Extract the process ID from the directory path
+    pid=$(basename "$proc_dir")
+    
+    # Check if the cmdline file exists and contains 'bash'
+    if [ -f "$proc_dir/cmdline" ] && grep -q '\<bash\>' "$proc_dir/cmdline"; then
+        # Read the process name from the cmdline file and display PID and name
+        process_name=$(tr -d '\0' < "$proc_dir/cmdline")
+        echo "$pid $process_name"
     fi
 done
