@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# terminate process
+
+touch stop_signal
+
+while pgrep -f "4-to_infinity_and_beyond" > /dev/null; do
+    sleep 1
+done
+
+echo "Process stopped"
