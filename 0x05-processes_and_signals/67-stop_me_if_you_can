@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# terminate process
+
+touch stop_signal
+
+while pgrep -f "7-highlander" > /dev/null; do
+    sleep 1
+done
+
+echo "Process stopped"
