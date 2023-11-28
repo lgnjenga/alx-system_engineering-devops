@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # Iterate through each directory in /proc that contains a number (representing a process)
+
 for proc_dir in /proc/[0-9]*; do
     # Extract the process ID from the directory path
     pid=$(basename "$proc_dir")
