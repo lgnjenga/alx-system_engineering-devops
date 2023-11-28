@@ -2,12 +2,9 @@
 # Iterate through each directory in /proc that contains a number (representing a process)
 
 for proc_dir in /proc/[0-9]*; do
-    # Extract the process ID from the directory path
     pid=$(basename "$proc_dir")
     
-    # Check if the cmdline file exists and contains 'bash'
     if [ -f "$proc_dir/cmdline" ] && grep -q '\<bash\>' "$proc_dir/cmdline"; then
-        # Read the process name from the cmdline file and display PID and name
         process_name=$(tr -d '\0' < "$proc_dir/cmdline")
         echo "$pid $process_name"
     fi
