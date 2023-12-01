@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Use ifconfig to get active IPv4 addresses and filter with grep
+
+ifconfig | grep -oE 'inet addr:[0-9.]+' | awk -F ':' '{print $2}'
