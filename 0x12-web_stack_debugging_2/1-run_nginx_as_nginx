@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Install Nginx if it is not already installed
+if ! command -v nginx &> /dev/null
+then
+    apt-get update
+    apt-get install -y nginx
+fi
+
+# Modify the Nginx configuration to listen on port 8080 and run as nginx user
+NGINX_CONF="/etc/nginx/nginx.conf"
+DEFAULT_SITE_CONF="/etc/nginx/sites-available/default"
+
+# Update the nginx.conf file to set the user to nginx
+sed -i 's/^user .*/user nginx;/' $NGINX_CONF
+
+# Update the default site configuration to listen on port 8080
+sed -i 's/listen 80 default_server;/listen 8080 default_server;/' $DEFAULT_SITE_CONF
+sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:8080 default_server;/' $DEFAULT_SITE_CONF
+
+# Change ownership of the web root directory to the nginx user
+chown -R nginx:nginx /var/www/html
+
+# Start or restart Nginx to apply changes
+service nginx restart
