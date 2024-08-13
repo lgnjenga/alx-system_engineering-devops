@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-    This script contains a function to retrieve the top ten posts for a specified subreddit.
+    This script contains a function to retrieve
+    the top ten posts for a specified subreddit.
 '''
 import requests
 from sys import argv

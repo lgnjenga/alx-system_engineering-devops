@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Module containing a function to count occurrences of words in Reddit posts."""
+""" Module containing a function to count
+    occurrences of words in Reddit posts.
+"""
 
 
 import requests
